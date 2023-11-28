@@ -4,13 +4,7 @@ const eventSchema = new mongoose.Schema(
   {
     organizer: {
       type: String,
-      required: [true, "Please enter admit card orgainzer name"],
-      minlength: [2, "orgaination name must be at least 2 characters"],
-      maxlength: [30, "orgaination name cannot exceed 30 characters"],
-      match: [
-        /^[a-zA-Z0-9 ]+$/,
-        "Please enter a valid event orgainzer name without special characters",
-      ],
+      required: [true, "Please enter event  orgainzer name"],
       trim: true,
     },
     name: {
@@ -22,6 +16,22 @@ const eventSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter description"],
       trim: true,
+    },
+
+    poster: {
+      type: String,
+      required: [true, "Please enter poster"],
+      trim: true,
+    },
+    author: {
+      name: {
+        type: String,
+        required: [true, "Please enter author name"],
+      },
+      avatar: {
+        type: String,
+        required: [true, "Please enter author photo"],
+      },
     },
 
     participants: {
@@ -44,10 +54,6 @@ const eventSchema = new mongoose.Schema(
           },
         },
       ],
-    },
-    date: {
-      type: Date,
-      required: [true, "Please enter event date"],
     },
   },
   { timestamps: true }

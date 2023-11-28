@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav container">
+        <a href="index.html" class="logo">Even<span>to</span></a>
+        <a href="contact.htm" class="contact">Contact</a>
+      </div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text container">
+        <h2 class="home-title">Contact Us</h2>
+        <span class="home-subtitle">Feel Free to Contact</span>
+      </div>
+    </section>
+    <section class="contact_container">
+      <form class="contact_form" onsubmit="handleSubmit(event)">
+        <!-- <label for="">Enter Your Name</label> -->
+        <input id="name" type="text" required placeholder="Enter Your Name" />
+        <!-- <label for="">Enter Your Email</label> -->
+        <input id="email" type="text" required placeholder="Enter Your email" />
+        <!-- <label for="">Enter Your Name</label> -->
+        <textarea
+          name=""
+          id="msg"
+          cols="30"
+          rows="10"
+          placeholder="Enter Your Message"
+          required
+        ></textarea>
+        <button type="submit" class="contact">Send</button>
+      </form>
+    </section>
+
+    <!-- footer -->
+
+    <div class="footer container">
+      <p>&#169; Evento All Right Reserved</p>
+      <div class="socail">
+        <a href="#">
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="bx bxl-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="#">
+          <i class="bx bxl-linkedin"></i>
+        </a>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("clicked");
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const msg = document.getElementById("msg").value;
+        const obj = {
+          name,
+          email,
+          message: msg,
+        };
+        console.log(obj);
+        try {
+          const json = await fetch("http://localhost:3000/contact", {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          const result = await json.json();
+          console.log(result);
+          if (result.success) {
+            alert("Message Send Successfully");
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("msg").value = "";
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    </script>
+  </body>
+</html>

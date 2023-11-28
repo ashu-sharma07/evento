@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import fs from "fs";
 import sendCertificate from "./src/certificate.js";
+import sendEmail from "./src/mailer.js";
 import connectDB from "./config/database.js";
 import Event from "./model/event.js";
 
@@ -30,7 +31,15 @@ app.get("/", (req, res) => {
 // get all events
 app.get("/events", async (req, res) => {
   try {
-    const events = await Event.find();
+    const { organizer } = req.query;
+    let query = {};
+
+    if (organizer) {
+      // If organizer parameter is provided, filter by organizer
+      query = { organizer: organizer };
+    }
+
+    const events = await Event.find(query);
     res.json(events);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
@@ -106,6 +115,31 @@ app.put("/participant/:eventId", async (req, res) => {
     res.json(event);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// contact us
+app.post("/contact", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  try {
+    console.log(req.body);
+    await sendEmail({
+      email: process.env.EMAIL_ADMIN,
+      subject: "Contact Form",
+      message: `
+          <h1>Contact Form</h1>
+          <p>Name: ${name}</p>
+          <p>Email: ${email}</p>
+          <p>Message: ${message}</p>
+        `,
+    });
+    res.status(200).json({
+      success: true,
+      message: "Message sent successfully",
+    });
+  } catch (error) {
+    res.status(400).json({ error: "Bad Request" });
   }
 });
 

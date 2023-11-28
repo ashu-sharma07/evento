@@ -13,8 +13,8 @@
   <body>
     <header>
       <div class="nav container">
-        <a href="#" class="logo">Even<span>to</span></a>
-        <a href="#" class="contact">Contact</a>
+        <a href="index.html" class="logo">Even<span>to</span></a>
+        <a href="contact.htm" class="contact">Contact</a>
       </div>
     </header>
 
@@ -28,198 +28,38 @@
     <!-- event filter -->
 
     <div class="event-filter container">
-      <span class="filter-item active-filter" data-filter="all">All</span>
-      <span class="filter-item" data-filter="gdsc">GDSC</span>
-      <span class="filter-item" data-filter="ecell">ECELL</span>
-      <span class="filter-item" data-filter="ieee">IEEE</span>
+      <span
+        class="filter-item active-filter"
+        onclick="fetchAllEventsParams('')"
+        data-filter="all"
+        id="all"
+        >All</span
+      >
+      <span
+        class="filter-item"
+        onclick="fetchAllEventsParams('gdsc')"
+        data-filter="gdsc"
+        id="gdsc"
+        >GDSC</span
+      >
+      <span
+        class="filter-item"
+        onclick="fetchAllEventsParams('ecell')"
+        data-filter="ecell"
+        id="ecell"
+        >ECELL</span
+      >
+      <span
+        class="filter-item"
+        onclick="fetchAllEventsParams('ieee')"
+        data-filter="ieee"
+        id="ieee"
+        >IEEE</span
+      >
     </div>
 
     <!-- events -->
-    <section class="event container">
-      <!-- event box 1 -->
-      <div class="event-box">
-        <img src="img/post-1.jpg" alt="" class="event-img" />
-        <h2 class="category">GDSC</h2>
-        <a href="event-page.html" class="event-title">
-          Google Cloud Study 2023
-        </a>
-        <span class="event-date">14 Sept 2023</span>
-        <p class="event-decription">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-          odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-          quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-          dolor corporis
-          <!-- profile -->
-          <div class="profile">
-            <img src="img/profile-1.jpg" alt="" class="profile-img">
-            <span class="profile-name">Ashu Sharma</span>
-
-          </div>
-        </p>
-      </div>
-            <!-- event box 2 -->
-            <div class="event-box">
-              <img src="img/post-2.jpg" alt="" class="event-img" />
-              <h2 class="category">ECELL</h2>
-              <a href="event-page.html" class="event-title">
-                Win Big Ideathon 2023
-              </a>
-              <span class="event-date">15 Oct 2023</span>
-              <p class="event-decription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-                odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-                quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-                dolor corporis
-                <!-- profile -->
-                <div class="profile">
-                  <img src="img/profile-2.jpg" alt="" class="profile-img">
-                  <span class="profile-name">Om Tripathi</span>
-                </div>
-              </p>
-            </div>
-                        <!-- event box 3 -->
-                        <div class="event-box">
-                          <img src="img/post-3.jpg" alt="" class="event-img" />
-                          <h2 class="category">IEEE</h2>
-                          <a href="event-page.html" class="event-title">
-                            Win Big Hackathon 2023
-                          </a>
-                          <span class="event-date">19 Oct 2023</span>
-                          <p class="event-decription">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-                            odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-                            quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-                            dolor corporis
-                            <!-- profile -->
-                            <div class="profile">
-                              <img src="img/profile-3.jpg" alt="" class="profile-img">
-                              <span class="profile-name">Riya Verma</span>
-                            </div>
-                          </p>
-                        </div>
-                         <!-- event box 1 -->
-      <div class="event-box">
-        <img src="img/post-4.jpg" alt="" class="event-img" />
-        <h2 class="category">GDSC</h2>
-        <a href="event-page.html" class="event-title">
-          Google Cloud Study 2023
-        </a>
-        <span class="event-date">14 Sept 2023</span>
-        <p class="event-decription">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-          odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-          quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-          dolor corporis
-          <!-- profile -->
-          <div class="profile">
-            <img src="img/profile-1.jpg" alt="" class="profile-img">
-            <span class="profile-name">Ashu Sharma</span>
-
-          </div>
-        </p>
-      </div>
-            <!-- event box 2 -->
-            <div class="event-box">
-              <img src="img/post-5.jpg" alt="" class="event-img" />
-              <h2 class="category">GDSC</h2>
-              <a href="event-page.html" class="event-title">
-                Win Big Ideathon 2023
-              </a>
-              <span class="event-date">15 Oct 2023</span>
-              <p class="event-decription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-                odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-                quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-                dolor corporis
-                <!-- profile -->
-                <div class="profile">
-                  <img src="img/profile-2.jpg" alt="" class="profile-img">
-                  <span class="profile-name">Om Tripathi</span>
-                </div>
-              </p>
-            </div>
-                        <!-- event box 3 -->
-                        <div class="event-box">
-                          <img src="img/post-6.jpg" alt="" class="event-img" />
-                          <h2 class="category">ECELL</h2>
-                          <a href="event-page.html" class="event-title">
-                            Win Big Hackathon 2023
-                          </a>
-                          <span class="event-date">19 Oct 2023</span>
-                          <p class="event-decription">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-                            odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-                            quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-                            dolor corporis
-                            <!-- profile -->
-                            <div class="profile">
-                              <img src="img/profile-3.jpg" alt="" class="profile-img">
-                              <span class="profile-name">Riya Verma</span>
-                            </div>
-                          </p>
-                        </div>
-                         <!-- event box 1 -->
-      <div class="event-box">
-        <img src="img/post-7.jpg" alt="" class="event-img" />
-        <h2 class="category">IEE</h2>
-        <a href="event-page.html" class="event-title">
-          Google Cloud Study 2023
-        </a>
-        <span class="event-date">14 Sept 2023</span>
-        <p class="event-decription">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-          odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-          quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-          dolor corporis
-          <!-- profile -->
-          <div class="profile">
-            <img src="img/profile-1.jpg" alt="" class="profile-img">
-            <span class="profile-name">Ashu Sharma</span>
-
-          </div>
-        </p>
-      </div>
-            <!-- event box 2 -->
-            <div class="event-box">
-              <img src="img/post-8.jpg" alt="" class="event-img" />
-              <h2 class="category">GDSC</h2>
-              <a href="event-page.html" class="event-title">
-                Win Big Ideathon 2023
-              </a>
-              <span class="event-date">15 Oct 2023</span>
-              <p class="event-decription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-                odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-                quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-                dolor corporis
-                <!-- profile -->
-                <div class="profile">
-                  <img src="img/profile-2.jpg" alt="" class="profile-img">
-                  <span class="profile-name">Om Tripathi</span>
-                </div>
-              </p>
-            </div>
-                        <!-- event box 9 -->
-                        <div class="event-box">
-                          <img src="img/post-9.jpg" alt="" class="event-img" />
-                          <h2 class="category">ECELL</h2>
-                          <a href="event-page.html" class="event-title">
-                            Win Big Hackathon 2023
-                          </a>
-                          <span class="event-date">19 Oct 2023</span>
-                          <p class="event-decription">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere,
-                            odio voluptate ad ratione dicta, dignissimos nemo, nobis pariatur
-                            quibusdam architecto maiores qui ipsa eius doloribus magnam! Tempore,
-                            dolor corporis
-                            <!-- profile -->
-                            <div class="profile">
-                              <img src="img/profile-3.jpg" alt="" class="profile-img">
-                              <span class="profile-name">Riya Verma</span>
-                            </div>
-                          </p>
-                        </div>
-    </section>
+    <section class="event container" id="allPosts"></section>
 
     <!-- footer -->
 
@@ -241,5 +81,8 @@
       </div>
     </div>
     <script src="js/main.js"></script>
+    <script>
+      fetchAllEvents();
+    </script>
   </body>
 </html>

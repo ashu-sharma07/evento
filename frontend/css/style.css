@@ -151,6 +151,7 @@ header.shadow .logo {
   box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
   padding: 15px;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .event-img {
@@ -331,4 +332,23 @@ header.shadow .logo {
     margin: 0 auto;
     width: 95%;
   }
+}
+
+.contact_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  padding: 5px;
 }
